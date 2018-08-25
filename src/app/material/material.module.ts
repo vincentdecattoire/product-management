@@ -6,6 +6,8 @@ import { MatButtonModule, MatIconModule, MatCheckboxModule } from '@angular/mate
   imports: [
     CommonModule,
     MatButtonModule,
+    MatIconModule,
+    MatCheckboxModule,
   ],
   exports: [
     MatButtonModule,
