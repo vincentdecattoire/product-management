@@ -1,0 +1,27 @@
+<mat-sidenav-container class="app-sidenav-container">
+    <mat-sidenav #sidenav class="app-sidenav mat-elevation-z10"
+    [opened]="!isSmallScreen()"
+    [mode]="isSmallScreen() ? 'over' : 'side'">
+
+    <mat-toolbar color="primary">Personas</mat-toolbar>
+
+      <mat-nav-list>
+          <mat-list-item *ngFor="let persona of personas | async">
+            <a matLine [routerLink]="['/personas', persona.id]">
+              <mat-icon svgIcon="{{persona.avatar}}"></mat-icon>
+              {{ persona.name }}
+            </a>
+          </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+
+
+        <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
+        <div class="wrapper">
+            <router-outlet></router-outlet>
+        </div>
+
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>

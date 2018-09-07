@@ -1,0 +1,19 @@
+<div *ngIf="!persona">
+  <mat-spinner></mat-spinner>
+  </div>
+<div *ngIf="persona">
+  <mat-card>
+      <mat-card-header>
+          <mat-icon mat-card-avatar svgIcon="{{persona.avatar}}"></mat-icon>
+          <mat-card-title>
+            <h2>{{ persona.name }}</h2>
+          </mat-card-title>
+          <mat-card-subtitle>Birthday {{ persona.birthDate | date:'d LLLL' }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            {{ persona.bio}}
+          </p>
+        </mat-card-content>
+  </mat-card>
+</div>
